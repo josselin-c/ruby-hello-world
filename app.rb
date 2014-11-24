@@ -36,17 +36,17 @@ get '/keys/:id' do
   if KeyPair.exists?(params[:id])
     KeyPair.find(params[:id]).value
   else
-    not_found "Key not found"
+    not_found "Key not found :-o"
   end
 end
 
 post '/keys/:id' do
   if KeyPair.exists?(params[:id])
     KeyPair.update(params['id'], value: params['value']) 
-    "Key updated"
+    "Key updated :)"
   else
     KeyPair.create(key:params[:id],value:params['value']).save
-    "Key created"
+    "Key created :|"
   end
 end
   
